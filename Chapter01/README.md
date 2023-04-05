@@ -37,7 +37,7 @@ According to the KDnuggets Poll of data mining professionals from 2019,
 
 It's important for data science professionals to be proficient in multiple tools, including R, Python, Java, C++, and SQL. R is a major tool for many companies and fields and is often the tool of choice for common data tasks.
 
-### 1.1.5 Comparison
+### 1.1.5 Comparison of Different Data Tools
 
 | Tool | Advantages | Limitations |
 |---|---|---|
