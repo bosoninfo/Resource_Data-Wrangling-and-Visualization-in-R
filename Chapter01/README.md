@@ -49,13 +49,118 @@ It's important for data science professionals to be proficient in multiple tools
 
 R is capable of wrangling and visualizing data effectively. A case study based on actual data will be used to demonstrate these capabilities. 
 
-- A series of packages will be loaded to provide extra functionality.
+### 1.2.1 Install and load packages
 
+- A series of packages will be loaded to provide extra functionality.
+```r
+# INSTALL AND LOAD PACKAGES ################################
+
+# Load base packages manually
+# library(datasets)  # For example datasets
+
+# Install pacman ("package manager") if needed
+if (!require("pacman")) install.packages("pacman")
+
+# pacman must already be installed; then load contributed
+# packages (including pacman) with pacman
+pacman::p_load(pacman, magrittr, productplots, psych, 
+  RColorBrewer, tidyverse)
+# pacman: for loading/unloading packages
+# magrittr: for pipes
+# productplots: for sample dataset "happy"
+# psych: for statistical procedures
+# RColorBrewer: for color palettes
+# tidyverse: for so many reasons
+```
+### 1.2.2 Load and prepare data
 - The data set from the Product Plots Package called `Happy` is used, which contains information on happiness from the General Social Survey.
 - The data set has over 50,000 observations.
 - The id and waiting variable are not necessary, and will be removed.
 - The main outcome of interest is happiness, which has three categories: not too happy, pretty happy, and very happy.
 - The values are flipped so that very happy comes first.
+
+```r
+# LOAD AND PREPARE DATA ####################################
+
+# "happy" dataset from productplots package; dataset has
+# 51,020 rows and 10 variables
+?happy
+names(happy)
+```
+```
+[1] "id"      "happy"   "year"    "age"     "sex"     "marital" "degree"  "finrela" "health"  "wtssall"
+```
+```r
+# Info on productplots package
+# browseURL("http://j.mp/2GMXZCZ")  # Page on CRAN
+# browseURL("http://j.mp/36ImMTy")  # Ref manual on CRAN
+# browseURL("http://j.mp/37Wxvv7")  # Preprint PDF
+
+# Save dataset to tibble named "df" (for "dataframe")
+df <- happy %>%
+  as_tibble() %>%
+  print()
+```
+```
+# A tibble: 51,020 × 10
+      id happy          year   age sex    marital       degree         finrela       health    wtssall
+   <dbl> <fct>         <dbl> <dbl> <fct>  <fct>         <fct>          <fct>         <fct>       <dbl>
+ 1     1 not too happy  1972    23 female never married bachelor       average       good        0.445
+ 2     2 not too happy  1972    70 male   married       lt high school above average fair        0.889
+ 3     3 pretty happy   1972    48 female married       high school    average       excellent   0.889
+ 4     4 not too happy  1972    27 female married       bachelor       average       good        0.889
+ 5     5 pretty happy   1972    61 female married       high school    above average good        0.889
+ 6     6 pretty happy   1972    26 male   never married high school    above average good        0.445
+ 7     7 not too happy  1972    28 male   divorced      high school    above average excellent   0.445
+ 8     8 not too happy  1972    27 male   never married bachelor       average       good        0.445
+ 9     9 pretty happy   1972    21 female never married high school    average       excellent   0.445
+10    10 pretty happy   1972    30 female married       high school    below average fair        0.889
+# ℹ 51,010 more rows
+# ℹ Use `print(n = ...)` to see more rows
+```
+```r
+# Delete id and wtssall, which is a weighting variable that
+# doesn't change results appreciably
+df %<>%
+  select(happy:health) %>%
+  print()
+```
+```
+# A tibble: 51,020 × 8
+   happy          year   age sex    marital       degree         finrela       health   
+   <fct>         <dbl> <dbl> <fct>  <fct>         <fct>          <fct>         <fct>    
+ 1 not too happy  1972    23 female never married bachelor       average       good     
+ 2 not too happy  1972    70 male   married       lt high school above average fair     
+ 3 pretty happy   1972    48 female married       high school    average       excellent
+ 4 not too happy  1972    27 female married       bachelor       average       good     
+ 5 pretty happy   1972    61 female married       high school    above average good     
+ 6 pretty happy   1972    26 male   never married high school    above average good     
+ 7 not too happy  1972    28 male   divorced      high school    above average excellent
+ 8 not too happy  1972    27 male   never married bachelor       average       good     
+ 9 pretty happy   1972    21 female never married high school    average       excellent
+10 pretty happy   1972    30 female married       high school    below average fair     
+# ℹ 51,010 more rows
+# ℹ Use `print(n = ...)` to see more rows
+```
+```r
+# Check levels of "happy"
+levels(df$happy)
+```
+```
+[1] "not too happy" "pretty happy"  "very happy" 
+```
+```r
+# Reverse levels of "happy" so "very happy" is at the top of
+# stacked bar charts
+df %<>%
+  mutate(happy = fct_rev(happy))
+
+levels(df$happy)
+```
+```
+[1] "very happy"    "pretty happy"  "not too happy"
+```
+### 1.2.3 Outcome variable: happiness
 - The distribution of happiness is examined with a bar chart using ggplot2.
 - The cases where respondents did not answer the happiness question are excluded.
 - Gender is examined next, but no gender difference is observed.
@@ -65,5 +170,7 @@ R is capable of wrangling and visualizing data effectively. A case study based o
 - Health is the last variable examined, and it appears that people who say they are in excellent health tend to say that they're very happy.
 - The year of the survey and age are also examined.
 - Density plots and box plots are used to examine the associations between happiness and year of survey, age, and year born.
+
+
 - The point of visualization and wrangling the data is not to reach final conclusions, but to raise questions and guide further investigation.
 - Visualization and wrangling the data can help to organize the data into a form that's best suited for answering questions and getting the visualizations that give insight and ideas for analysis.
