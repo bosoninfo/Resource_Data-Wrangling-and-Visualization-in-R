@@ -1,8 +1,8 @@
 # Resource_Data-Wrangling-and-Visualization-in-R
 
-# Make your data make sense
+## Make your data make sense
 
-## Introduction
+### Introduction
 
 In this course, we will learn how to work with data and how to find meaningful patterns in direction and data using R. R is a free open-source programming language designed to help you explore and model data to find the insight you need.
 
