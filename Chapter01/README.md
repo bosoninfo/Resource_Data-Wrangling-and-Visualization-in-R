@@ -181,7 +181,10 @@ df %>%
     axis.title.x = element_blank(), 
     legend.position = "none"
   )
+```
+<img src="https://user-images.githubusercontent.com/19381768/230099937-5d344c73-ac5c-4aa2-8610-90db7a95f840.png" width=50%/>
 
+```r
 # Frequencies for happy
 df %>% count(happy)
 
