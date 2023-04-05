@@ -6,15 +6,21 @@ In this section, we will discuss where R fits in the data science toolbox and it
 
 ### 1.1.1 Tools for working with data
 
-There are many tools available for working with data, including spreadsheets and statistical applications such as `SPSS`, `SAS`, and `Jamovi`. These tools offer user-friendly interfaces for data exploration and modeling. However, they may not be sufficient for all data tasks, especially those involving more complex questions or data formats.
+There are many tools available for working with data, including spreadsheets and statistical applications. These tools offer user-friendly interfaces for data exploration and modeling. However, they may not be sufficient for all data tasks, especially those involving more complex questions or data formats.
 
 ### 1.1.2 Spreadsheets for working with data
 
 Spreadsheets, such as `Microsoft Excel` and `Google Sheets`, are ubiquitous and widely used for organizing and analyzing data. They offer flexibility in organizing data in a variety of formats and can sort, filter, count, and summarize data quickly. Spreadsheets can also create relatively sophisticated graphs and visualizations.
 
-While spreadsheets may be sufficient for many real-world data tasks, they may not be suitable for creating more complex statistical models. In these cases, more sophisticated tools like statistical applications or programming languages may be necessary. Nonetheless, spreadsheets are an important tool to have in any data scientist's toolbox due to their versatility and widespread use.
+While spreadsheets may be sufficient for many real-world data tasks, they may not be suitable for creating more complex statistical models. In these cases, more sophisticated tools like statistical applications or programming languages may be necessary. 
 
-### 1.1.3 Data-oriented programming languages
+### 1.1.3 Statistical Applications for working with data
+
+Statistical applications, such as `SPSS`, `SAS`, and `Jamovi`, offer user-friendly point-and-click interfaces for data exploration and modeling. They are designed to handle large datasets and can perform a wide range of statistical analyses. These applications are commonly used in fields like psychology, social work, education, and business.
+
+While statistical applications are a powerful tool for data analysis, they may not be suitable for all data tasks. For example, they may not be able to handle data that does not fit neatly into rows and columns. In these cases, a more sophisticated tool like a data-oriented programming language may be necessary.
+
+### 1.1.4 Data-oriented programming languages
 
 Data-oriented programming languages, such as `Python`, `Julia`, and `R`, offer greater control and power in analyzing data. These languages allow for more advanced statistical modeling and data manipulation.
 
