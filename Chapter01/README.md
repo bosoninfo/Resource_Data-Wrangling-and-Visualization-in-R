@@ -29,6 +29,10 @@ According to the KDnuggets Poll of data mining professionals from 2019,
 - R is also widely used, with about 50% of respondents reporting using it on a daily basis. 
 - Excel is also a popular tool, especially for basic data tasks.
 
+|![image](https://user-images.githubusercontent.com/19381768/230088363-2c554254-45de-401a-8765-30f4d9ab54f6.png)|
+|:--:|
+|KDnuggets Poll, 2019|
+
 It's important for data science professionals to be proficient in multiple tools, including R, Python, Java, C++, and SQL. R is a major tool for many companies and fields and is often the tool of choice for common data tasks.
 
 | Tool | Advantages | Limitations |
