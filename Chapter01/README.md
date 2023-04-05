@@ -170,7 +170,306 @@ levels(df$happy)
 - Health is the last variable examined, and it appears that people who say they are in excellent health tend to say that they're very happy.
 - The year of the survey and age are also examined.
 - Density plots and box plots are used to examine the associations between happiness and year of survey, age, and year born.
+```r
+# OUTCOME VARIABLE: HAPPINESS ##############################
 
+# Bar chart of happy
+df %>%
+  ggplot() + 
+  geom_bar(aes(happy, fill = happy)) + 
+  theme(
+    axis.title.x = element_blank(), 
+    legend.position = "none"
+  )
+
+# Frequencies for happy
+df %>% count(happy)
+
+# Filter out the NA responses on happy
+df %<>%
+  filter(!is.na(happy))
+
+# Frequencies for happy
+df %>% count(happy)
+
+# HAPPINESS AND GENDER #####################################
+
+# Bar chart of sex
+df %>%
+  ggplot() + 
+  geom_bar(aes(sex, fill = sex)) + 
+  theme(
+    axis.title.x = element_blank(), 
+    legend.position = "none"
+  )
+
+# Frequencies for sex
+df %>% count(sex)
+
+# 100% stacked bar chart
+df %>%
+  ggplot(aes(sex, fill = happy)) + 
+  geom_bar(position = "fill")
+# Looks pretty similar
+
+# HAPPINESS AND MARITAL STATUS #############################
+
+# Bar chart of marital
+df %>%
+  ggplot() + 
+  geom_bar(aes(marital, fill = marital)) + 
+  theme(
+    axis.title.x = element_blank(), 
+    legend.position = "none"
+  )
+
+# Frequencies for marital
+df %>% count(marital)
+
+# 100% stacked bar chart
+df %>%
+  filter(!is.na(marital)) %>%
+  ggplot(aes(marital, fill = happy)) + 
+  geom_bar(position = "fill")
+
+# Create dichotmous married/not variable
+df %<>%
+  mutate(
+    married = ifelse(
+      marital == "married",
+      "yes",
+      "no")
+  ) %>%
+  mutate(married = as.factor(married)) %>%
+ print()
+
+# Frequencies for married
+df %>% count(married)
+
+# 100% stacked bar chart
+df %>%
+  filter(!is.na(married)) %>%
+  ggplot(aes(married, fill = happy)) + 
+  geom_bar(position = "fill")
+# Married group has more in "very happy" and fewer in "not
+# too happy"
+
+# HAPPINESS AND LEVEL OF EDUCATION #########################
+
+# Bar chart of degree
+df %>%
+  ggplot() + 
+  geom_bar(aes(degree, fill = degree)) + 
+  theme(
+    axis.title.x = element_blank(), 
+    legend.position = "none"
+  )
+
+# Frequencies of degree
+df %>% count(degree)
+
+# 100% stacked bar chart
+df %>%
+  filter(!is.na(degree)) %>%
+  ggplot(aes(degree, fill = happy)) + 
+  geom_bar(position = "fill")
+# Things look bad for "lt high school" with only small
+# differences between other groups?
+
+# Create dichotomous college/not variable for exploration
+df %<>%
+  mutate(
+    college = ifelse(
+      degree %in%
+      c("junior college",
+        "bachelor",
+        "graduate"),
+      "yes", "no")
+  ) %>%
+  print()
+
+# Frequencies of college
+df %>% count(college)
+
+# 100% stacked bar chart
+df %>%
+  ggplot(aes(college, fill = happy)) + 
+  geom_bar(position = "fill")
+
+# HAPPINESS AND FINANCIAL STATUS ###########################
+
+# Bar chart of finrela
+df %>%
+  ggplot() + 
+  geom_bar(aes(finrela, fill = finrela)) + 
+  theme(
+    axis.title.x = element_blank(), 
+    legend.position = "none"
+  )
+
+# Frequencies for finrela
+df %>% count(finrela)
+
+# 100% stacked bar chart
+df %>%
+  filter(!is.na(finrela)) %>%
+  ggplot(aes(finrela, fill = happy)) + 
+  geom_bar(position = "fill")
+
+# Create dichotomous varible for average finances or higher
+df %<>%
+  mutate(
+    avg_fin = case_when(
+      finrela %in%
+        c("far below average",
+          "below average") ~
+          "no",
+      finrela %in%
+        c("average",
+          "above average",
+          "far above average") ~
+          "yes",
+      finrela == "NA" ~ "NA")
+  ) %>%
+  print()
+
+# Get frequencies
+df %>% count(avg_fin)
+
+# 100% stacked bar chart
+df %>%
+  filter(!is.na(avg_fin)) %>%
+  ggplot(aes(avg_fin, fill = happy)) + 
+  geom_bar(position = "fill")
+# Big differences in both "very happy" and "not too happy"
+
+# HAPPINESS AND HEALTH #####################################
+
+# Bar chart of health
+df %>%
+  ggplot() + 
+  geom_bar(aes(health, fill = health)) + 
+  theme(
+    axis.title.x = element_blank(), 
+    legend.position = "none"
+  )
+
+# Frequencies of health
+df %>% count(health)
+
+# 100% stacked bar chart
+df %>%
+  filter(!is.na(health)) %>%
+  ggplot(aes(health, fill = happy)) + 
+  geom_bar(position = "fill")
+# Looks pretty linear; should be a good predictor as is
+
+# HAPPINESS AND YEAR OF SURVEY #############################
+
+# Histogram of year
+df %>% qplot(year, binwidth = 5, data = .)
+
+# Descriptive statistics for year
+df %>% select(year) %>% summary()
+# This the year of the survey, so it might reflect
+# historical patterns or events (maybe)
+
+# Density plots of year by group
+df%>%
+  ggplot(aes(x = year, 
+    fill = happy)) + 
+  geom_density(alpha = 0.5) +
+  facet_grid(happy ~ .) +  # facet_grid
+  theme(legend.position = "none")  # Turn off legend
+
+# Boxplots of year by group
+df %>%
+  ggplot(aes(x = happy, 
+    y = year, 
+    fill = happy)) + 
+  geom_boxplot() +
+  coord_flip() +
+  xlab("") +
+  theme(legend.position = "none")
+# No obvious differences
+
+# HAPPINESS AND AGE ########################################
+
+# Histogram of age
+df %>% qplot(age, binwidth = 5, data = .)
+
+# Descriptive statistics for age
+df %>% select(age) %>% summary()
+# Could create general age groups
+
+# Density plots of age by group
+df %>%
+  ggplot(aes(x = age, 
+    fill = happy)) + 
+  geom_density(alpha = 0.5) +
+  facet_grid(happy ~ .) +  # facet_grid
+  theme(legend.position = "none")  # Turn off legend
+# Maybe a bulge in "very happy" for people 55-70 years old?
+
+# Boxplots of age by group
+df %>%
+  ggplot(aes(x = happy, 
+    y = age, 
+    fill = happy)) + 
+  geom_boxplot() +
+  coord_flip() +
+  xlab("") +
+  theme(legend.position = "none")
+# No obvious differences
+
+# HAPPINESS AND YEAR BORN ##################################
+
+# Calculate year of birth
+df %<>%
+  mutate(born = year - age)
+
+# Histogram of born
+df %>% qplot(born, binwidth = 5, data = .)
+
+# Descriptive statistics for bon
+df %>% select(born) %>% summary()
+
+# Density plots of born by group
+df %>%
+  ggplot(aes(x = born, 
+    fill = happy)) + 
+  geom_density(alpha = 0.5) +
+  facet_grid(happy ~ .) +  # facet_grid
+  theme(legend.position = "none")  # Turn off legend
+
+# Boxplots of born by group
+df %>%
+  ggplot(aes(x = happy, 
+    y = born, 
+    fill = happy)) + 
+  geom_boxplot() +
+  coord_flip() +
+  xlab("") +
+  theme(legend.position = "none")
+# No obvious differences
+
+# CLEAN UP #################################################
+
+# Clear data
+rm(list = ls())  # Removes all objects from environment
+
+# Clear packages
+detach("package:datasets", unload = T)  # For base packages
+p_unload(all)  # Remove all contributed packages
+
+# Clear plots
+graphics.off()  # Clears plots, closes all graphics devices
+
+# Clear console
+cat("\014")  # Mimics ctrl+L
+
+# Clear mind :)
+```
 
 - The point of visualization and wrangling the data is not to reach final conclusions, but to raise questions and guide further investigation.
 - Visualization and wrangling the data can help to organize the data into a form that's best suited for answering questions and getting the visualizations that give insight and ideas for analysis.
