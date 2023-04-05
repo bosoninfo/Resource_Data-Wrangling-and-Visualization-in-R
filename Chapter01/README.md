@@ -187,14 +187,33 @@ df %>%
 ```r
 # Frequencies for happy
 df %>% count(happy)
-
+```
+```
+# A tibble: 4 × 2
+  happy             n
+  <fct>         <int>
+1 very happy    14800
+2 pretty happy  25874
+3 not too happy  5629
+4 NA             4717
+```
+```r
 # Filter out the NA responses on happy
 df %<>%
   filter(!is.na(happy))
 
 # Frequencies for happy
 df %>% count(happy)
-
+```
+```
+# A tibble: 3 × 2
+  happy             n
+  <fct>         <int>
+1 very happy    14800
+2 pretty happy  25874
+3 not too happy  5629
+```
+```r
 # HAPPINESS AND GENDER #####################################
 
 # Bar chart of sex
@@ -205,7 +224,10 @@ df %>%
     axis.title.x = element_blank(), 
     legend.position = "none"
   )
+```
+<img src="https://user-images.githubusercontent.com/19381768/230102773-473473ed-cbf8-49b6-bf48-d99bde4315bb.png" width=50%/>
 
+```r
 # Frequencies for sex
 df %>% count(sex)
 
