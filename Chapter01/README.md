@@ -29,8 +29,7 @@ According to the KDnuggets Poll of data mining professionals from 2019,
 - R is also widely used, with about 50% of respondents reporting using it on a daily basis. 
 - Excel is also a popular tool, especially for basic data tasks.
 
-|![image](https://user-images.githubusercontent.com/19381768/230088363-2c554254-45de-401a-8765-30f4d9ab54f6.png)|![image](https://user-images.githubusercontent.com/19381768/230088638-c9817e9a-0d40-46c4-92c9-a816a3a7c495.png)
-|
+|![image](https://user-images.githubusercontent.com/19381768/230088363-2c554254-45de-401a-8765-30f4d9ab54f6.png)|![image](https://user-images.githubusercontent.com/19381768/230088638-c9817e9a-0d40-46c4-92c9-a816a3a7c495.png)|
 |:--:|:--:|
 |KDnuggets Poll, 2019|Data Science Jobs on Indeed, 2017|
 
