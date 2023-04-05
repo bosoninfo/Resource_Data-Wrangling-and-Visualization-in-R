@@ -30,3 +30,10 @@ According to the KDnuggets Poll of data mining professionals from 2019,
 - Excel is also a popular tool, especially for basic data tasks.
 
 It's important for data science professionals to be proficient in multiple tools, including R, Python, Java, C++, and SQL. R is a major tool for many companies and fields and is often the tool of choice for common data tasks.
+
+| Tool | Advantages | Limitations |
+|---|---|---|
+| Spreadsheets | Ubiquitous, flexible in organizing data, quick and easy to sort, filter, count, and summarize | May not be suitable for creating complex statistical models                                                                |
+| Statistical applications | User-friendly point-and-click interfaces, designed to handle large datasets, perform complex analyses | May not be able to handle data that does not fit neatly into rows and columns                                             |
+| Data-oriented programming languages | Greater control and power in analyzing data, more advanced statistical modeling and data manipulation | Steeper learning curve, may require more coding expertise, less user-friendly than spreadsheets or statistical applications |
+
