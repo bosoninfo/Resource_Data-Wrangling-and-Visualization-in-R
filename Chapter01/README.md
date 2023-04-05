@@ -45,3 +45,25 @@ It's important for data science professionals to be proficient in multiple tools
 | Statistical applications | User-friendly point-and-click interfaces, designed to handle large datasets, perform complex analyses | May not be able to handle data that does not fit neatly into rows and columns                                             |
 | Data-oriented programming languages | Greater control and power in analyzing data, more advanced statistical modeling and data manipulation | Steeper learning curve, may require more coding expertise, less user-friendly than spreadsheets or statistical applications |
 
+## 1.2 Data science with R: A case study
+
+R is capable of wrangling and visualizing data effectively. A case study based on actual data will be used to demonstrate these capabilities. 
+
+- A series of packages will be loaded to provide extra functionality.
+
+- The data set from the Product Plots Package called `Happy` is used, which contains information on happiness from the General Social Survey.
+- The data set has over 50,000 observations.
+- The id and waiting variable are not necessary, and will be removed.
+- The main outcome of interest is happiness, which has three categories: not too happy, pretty happy, and very happy.
+- The values are flipped so that very happy comes first.
+- The distribution of happiness is examined with a bar chart using ggplot2.
+- The cases where respondents did not answer the happiness question are excluded.
+- Gender is examined next, but no gender difference is observed.
+- Marital status is the next variable examined, with the data set indicating that people who are married tend to be happier than those who are not.
+- Education level is the next variable examined, and it appears that people who graduated from college tend to be happier.
+- Financial status is the next variable examined, and it appears that people who have at least average finances are much more likely to say that they are very happy.
+- Health is the last variable examined, and it appears that people who say they are in excellent health tend to say that they're very happy.
+- The year of the survey and age are also examined.
+- Density plots and box plots are used to examine the associations between happiness and year of survey, age, and year born.
+- The point of visualization and wrangling the data is not to reach final conclusions, but to raise questions and guide further investigation.
+- Visualization and wrangling the data can help to organize the data into a form that's best suited for answering questions and getting the visualizations that give insight and ideas for analysis.
