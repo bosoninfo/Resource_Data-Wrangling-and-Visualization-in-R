@@ -32,10 +32,12 @@ According to the KDnuggets Poll of data mining professionals from 2019,
 |![image](https://user-images.githubusercontent.com/19381768/230088363-2c554254-45de-401a-8765-30f4d9ab54f6.png)|![image](https://user-images.githubusercontent.com/19381768/230088638-c9817e9a-0d40-46c4-92c9-a816a3a7c495.png)|
 |:--:|:--:|
 |KDnuggets Poll, 2019|Data Science Jobs on Indeed, 2017|
-|![image](https://user-images.githubusercontent.com/19381768/230089032-393350f4-f959-4ba2-8b97-dc0a55aecbc8.png)||
-|Scholarly Articles, 2018||
+|![image](https://user-images.githubusercontent.com/19381768/230089032-393350f4-f959-4ba2-8b97-dc0a55aecbc8.png)|Python is strong in machine learning and database app development, while R is strong in data analysis for scientific research and social sciences.|
+|Scholarly Articles, 2018|Comparison of Python and R|
 
 It's important for data science professionals to be proficient in multiple tools, including R, Python, Java, C++, and SQL. R is a major tool for many companies and fields and is often the tool of choice for common data tasks.
+
+### 1.1.5 Comparison
 
 | Tool | Advantages | Limitations |
 |---|---|---|
