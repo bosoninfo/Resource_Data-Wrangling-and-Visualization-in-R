@@ -275,3 +275,68 @@ cat("\014")  # ctrl+L
 
 # Clear mind :)
 ```
+
+## :herb: 2.7 Comments and Headers
+
+Selecting transcript lines in this section will navigate to timestamp in the video.
+
+### :apple: 2.7.1 Organizing Code with Comments
+- The comment character in R is the pound sign, number sign, or octothorpe `#`.
+- Use comments to describe what's happening in your code and to temporarily turn off/on code.
+- Use `Shift + Command/Ctrl + C` to comment/uncomment a line.
+
+### :apple: 2.7.2 Organizing Code with Section Headers
+- Use section headers to organize your code into distinct sections and improve readability.
+- You can use three levels of headers: level 1 (#), level 2 (##), and level 3 (###).
+- Use at least four characters after the header name.
+- Indentation is not supported, but you can use the "Show Document Outline" feature in RStudio to easily navigate between sections.
+- Use comments to explain what's happening within each section.
+
+### :apple: 2.7.3 Example: Loading Datasets
+- Use comments to describe the purpose of a command.
+- Use commented out code to experiment with different options.
+```r
+# INSTALL AND LOAD PACKAGES ################################
+
+# Load base packages manually
+library(datasets)  # For example datasets
+
+# LOAD AND PREPARE DATA ####################################
+
+df <- iris
+head(df)
+```
+
+### :apple: 2.7.4 Example: Creating a Histogram
+- Use commented out code to try variations on what you're doing.
+- Use `Shift + Command` or `Ctrl + P` to re-run the previous code region.
+```r
+# COMMENT OUT LINES ########################################
+
+# Comment/uncomment lines in RStudio with shift-cmd/ctrl-C
+
+# Use comments to disable commands
+hist(df$Sepal.Width,
+  # col  = "#CD0000",  # red3
+  # border = NA,  # No borders
+  main = "Histogram of Sepal Width",
+  xlab = "Sepal Width (in cm)")
+
+# THIS IS A LEVEL 1 HEADER #################################
+
+## This Is a Level 2 Header ================================
+
+### This is a level 3 header. ------------------------------
+```
+
+### :apple: 2.7.5 Clean up
+```r
+# Clear environment
+rm(list = ls()) 
+
+# Clear packages
+detach("package:datasets", unload = TRUE)  # For base
+
+# Clear plots
+graphics.off()  # Clears plots, closes all graphics devices
+```
