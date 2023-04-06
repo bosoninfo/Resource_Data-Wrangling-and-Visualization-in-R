@@ -208,15 +208,19 @@ df %>%
 # Frequencies for happy
 df %>% count(happy)
 ```
-> ```
-> # A tibble: 4 × 2
->   happy             n
->   <fct>         <int>
-> 1 very happy    14800
-> 2 pretty happy  25874
-> 3 not too happy  5629
-> 4 NA             4717
-> ```
+<blockquote>
+  
+```
+# A tibble: 4 × 2
+  happy             n
+  <fct>         <int>
+1 very happy    14800
+2 pretty happy  25874
+3 not too happy  5629
+4 NA             4717
+```
+</blockquote>
+
 ```r
 # Filter out the NA responses on happy
 df %<>%
@@ -225,15 +229,18 @@ df %<>%
 # Frequencies for happy
 df %>% count(happy)
 ```
-> ```
-> # A tibble: 3 × 2
->   happy             n
->   <fct>         <int>
-> 1 very happy    14800
-> 2 pretty happy  25874
-> 3 not too happy  5629
-> ```
-
+<blockquote>
+    
+```
+# A tibble: 3 × 2
+  happy             n
+  <fct>         <int>
+1 very happy    14800
+2 pretty happy  25874
+3 not too happy  5629
+```
+</blockquote>
+  
 #### HAPPINESS AND GENDER
 ```r
 # Bar chart of sex
@@ -251,13 +258,17 @@ df %>%
 # Frequencies for sex
 df %>% count(sex)
 ```
-> ```
-> # A tibble: 2 × 2
->   sex        n
->   <fct>  <int>
-> 1 male   20357
-> 2 female 25946
-> ```
+<blockquote>
+  
+```
+# A tibble: 2 × 2
+  sex        n
+  <fct>  <int>
+1 male   20357
+2 female 25946
+```
+</blockquote>
+  
 ```r
 # 100% stacked bar chart
 df %>%
@@ -284,17 +295,21 @@ df %>%
 # Frequencies for marital
 df %>% count(marital)
 ```
-> ```
-> # A tibble: 6 × 2
->   marital           n
->   <fct>         <int>
-> 1 married       25662
-> 2 never married  8979
-> 3 divorced       5385
-> 4 widowed        4652
-> 5 separated      1618
-> 6 NA                7
-> ```
+<blockquote>
+  
+```
+# A tibble: 6 × 2
+  marital           n
+  <fct>         <int>
+1 married       25662
+2 never married  8979
+3 divorced       5385
+4 widowed        4652
+5 separated      1618
+6 NA                7
+```
+</blockquote>
+    
 ```r
 # 100% stacked bar chart
 df %>%
@@ -316,35 +331,43 @@ df %<>%
   mutate(married = as.factor(married)) %>%
  print()
 ```
-> ```
-> # A tibble: 46,303 × 9
->    happy          year   age sex    marital       degree         finrela       health    married
->    <fct>         <dbl> <dbl> <fct>  <fct>         <fct>          <fct>         <fct>     <fct>  
->  1 not too happy  1972    23 female never married bachelor       average       good      no     
->  2 not too happy  1972    70 male   married       lt high school above average fair      yes    
->  3 pretty happy   1972    48 female married       high school    average       excellent yes    
->  4 not too happy  1972    27 female married       bachelor       average       good      yes    
->  5 pretty happy   1972    61 female married       high school    above average good      yes    
->  6 pretty happy   1972    26 male   never married high school    above average good      no     
->  7 not too happy  1972    28 male   divorced      high school    above average excellent no     
->  8 not too happy  1972    27 male   never married bachelor       average       good      no     
->  9 pretty happy   1972    21 female never married high school    average       excellent no     
-> 10 pretty happy   1972    30 female married       high school    below average fair      yes    
-> # ℹ 46,293 more rows
-> # ℹ Use `print(n = ...)` to see more rows
-> ```
+<blockquote>
+    
+```
+# A tibble: 46,303 × 9
+   happy          year   age sex    marital       degree         finrela       health    married
+   <fct>         <dbl> <dbl> <fct>  <fct>         <fct>          <fct>         <fct>     <fct>  
+ 1 not too happy  1972    23 female never married bachelor       average       good      no     
+ 2 not too happy  1972    70 male   married       lt high school above average fair      yes    
+ 3 pretty happy   1972    48 female married       high school    average       excellent yes    
+ 4 not too happy  1972    27 female married       bachelor       average       good      yes    
+ 5 pretty happy   1972    61 female married       high school    above average good      yes    
+ 6 pretty happy   1972    26 male   never married high school    above average good      no     
+ 7 not too happy  1972    28 male   divorced      high school    above average excellent no     
+ 8 not too happy  1972    27 male   never married bachelor       average       good      no     
+ 9 pretty happy   1972    21 female never married high school    average       excellent no     
+10 pretty happy   1972    30 female married       high school    below average fair      yes    
+# ℹ 46,293 more rows
+# ℹ Use `print(n = ...)` to see more rows
+```
+</blockquote>
+  
 ```r
 # Frequencies for married
 df %>% count(married)
 ```
-> ```
-> # A tibble: 3 × 2
->   married     n
->   <fct>   <int>
-> 1 no      20634
-> 2 yes     25662
-> 3 NA          7
-> ```
+<blockquote>
+  
+```
+# A tibble: 3 × 2
+  married     n
+  <fct>   <int>
+1 no      20634
+2 yes     25662
+3 NA          7
+```
+</blockquote>
+  
 ```  
 # 100% stacked bar chart
 df %>%
