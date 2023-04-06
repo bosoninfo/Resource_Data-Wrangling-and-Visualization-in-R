@@ -328,6 +328,7 @@ hist(df$Sepal.Width,
 
 ### This is a level 3 header. ------------------------------
 ```
+> <img src="https://user-images.githubusercontent.com/19381768/230302591-dc996db9-a3c0-4800-a709-d5b3b44ba3fb.png" width=50%/>
 
 ### :apple: 2.7.5 Clean up
 ```r
