@@ -1,7 +1,5 @@
 # 1 WHAT IS R?
 
-[[_TOC_]]
-
 ## 1.1 R in Context
 
 In this section, we will discuss where R fits in the data science toolbox and its popularity among professionals.
@@ -639,7 +637,21 @@ df %>% qplot(year, binwidth = 5, data = .)
 df %>% select(year) %>% summary()
 # This the year of the survey, so it might reflect
 # historical patterns or events (maybe)
-
+```
+<blockquote>
+    
+```
+      year     
+ Min.   :1972  
+ 1st Qu.:1980  
+ Median :1988  
+ Mean   :1989  
+ 3rd Qu.:1996  
+ Max.   :2006  
+```
+</blockquote>
+  
+```r
 # Density plots of year by group
 df%>%
   ggplot(aes(x = year, 
@@ -647,7 +659,10 @@ df%>%
   geom_density(alpha = 0.5) +
   facet_grid(happy ~ .) +  # facet_grid
   theme(legend.position = "none")  # Turn off legend
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230259517-36d63710-bd51-438d-a8aa-0e8c51c98437.png" width=50%/>
 
+```r
 # Boxplots of year by group
 df %>%
   ggplot(aes(x = happy, 
@@ -658,16 +673,36 @@ df %>%
   xlab("") +
   theme(legend.position = "none")
 # No obvious differences
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230259973-6be487bc-b247-47d3-8523-858213f9d758.png" width=50%/>
 
-# HAPPINESS AND AGE ########################################
-
+#### HAPPINESS AND AGE
+```r
 # Histogram of age
 df %>% qplot(age, binwidth = 5, data = .)
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230260096-bf1b39b8-f211-4c5d-902e-a80a06017248.png" width=50%/>
 
+```r
 # Descriptive statistics for age
 df %>% select(age) %>% summary()
 # Could create general age groups
-
+```
+<blockquote>
+    
+```
+      age       
+ Min.   :18.00  
+ 1st Qu.:31.00  
+ Median :42.00  
+ Mean   :45.33  
+ 3rd Qu.:58.00  
+ Max.   :89.00  
+ NA's   :150    
+```
+</blockquote>
+  
+```r
 # Density plots of age by group
 df %>%
   ggplot(aes(x = age, 
@@ -676,7 +711,10 @@ df %>%
   facet_grid(happy ~ .) +  # facet_grid
   theme(legend.position = "none")  # Turn off legend
 # Maybe a bulge in "very happy" for people 55-70 years old?
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230260628-305ae6d5-0885-485d-b3f4-b1c439d6a991.png" width=50%/>
 
+```r
 # Boxplots of age by group
 df %>%
   ggplot(aes(x = happy, 
@@ -687,19 +725,39 @@ df %>%
   xlab("") +
   theme(legend.position = "none")
 # No obvious differences
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230260753-9fc9ac51-da7c-4671-8e15-2e93a19499ed.png" width=50%/>
 
-# HAPPINESS AND YEAR BORN ##################################
-
+#### HAPPINESS AND YEAR BORN
+```r
 # Calculate year of birth
 df %<>%
   mutate(born = year - age)
 
 # Histogram of born
 df %>% qplot(born, binwidth = 5, data = .)
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230261065-5fe37bb8-8ae5-4b09-a70b-87fdd1b99024.png" width=50%/>
 
+```r
 # Descriptive statistics for bon
 df %>% select(born) %>% summary()
-
+```
+<blockquote>
+    
+```
+      born     
+ Min.   :1883  
+ 1st Qu.:1928  
+ Median :1946  
+ Mean   :1943  
+ 3rd Qu.:1958  
+ Max.   :1988  
+ NA's   :150    
+```
+</blockquote>
+  
+```r
 # Density plots of born by group
 df %>%
   ggplot(aes(x = born, 
@@ -707,7 +765,10 @@ df %>%
   geom_density(alpha = 0.5) +
   facet_grid(happy ~ .) +  # facet_grid
   theme(legend.position = "none")  # Turn off legend
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230261273-45179e98-efb1-4302-addc-2eb8649ddba9.png" width=50%/>
 
+```r
 # Boxplots of born by group
 df %>%
   ggplot(aes(x = happy, 
