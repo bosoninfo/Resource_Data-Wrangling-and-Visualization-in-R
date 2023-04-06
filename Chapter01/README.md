@@ -316,7 +316,16 @@ df %<>%
 ```r
 # Frequencies for married
 df %>% count(married)
-
+```
+> ```
+> # A tibble: 3 × 2
+>   married     n
+>   <fct>   <int>
+> 1 no      20634
+> 2 yes     25662
+> 3 NA          7
+> ```
+```  
 # 100% stacked bar chart
 df %>%
   filter(!is.na(married)) %>%
