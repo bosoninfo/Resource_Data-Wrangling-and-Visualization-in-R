@@ -465,6 +465,7 @@ df %<>%
 df %>% count(college)
 ```
 <blockquote>
+  
 ```
 # A tibble: 2 × 2
   college     n
