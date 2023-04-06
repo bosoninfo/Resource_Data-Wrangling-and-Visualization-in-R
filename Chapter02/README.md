@@ -343,13 +343,65 @@ graphics.off()  # Clears plots, closes all graphics devices
 ```
 
 ## :herb: 2.8 Packages for R
-
-R is extensible and can be given additional functionality and capabilities by using packages
+### :apple: 2.8.1 Install and Load Packages
+R is extensible and can be given additional functionality and capabilities by using packages.
 - To check if a package is installed, use the `library()` or `require()` command
 - To install a package, use the `install.packages()` command
 - Popular packages include `pacman` for package management, `party` for decision trees, `psych` for statistical procedures, `rio` for data input/output, and `tidyverse` for data manipulation and visualization
 - Some packages, such as `datasets`, come with R but need to be loaded using the `library()` or `require()` command
+```r
+# Install pacman ("package manager") if needed
+if (!require("pacman")) install.packages("pacman")
 
-Packages can be found for free and downloaded from the Comprehensive R Archive Network (CRAN) website
+# Load contributed packages with pacman
+pacman::p_load(pacman, party, psych, rio, tidyverse)
+# pacman: for loading/unloading packages
+# party: for decision trees
+# psych: for many statistical procedures
+# rio: for importing data
+# tidyverse: for so many reasons
+
+# Load base packages manually
+library(datasets)  # For example datasets
+```
+
+### :apple: 2.8.2 Load and Prepare Data
+```r
+# Save data to "df" (for "data frame")
+# Rename outcome as "y" (if it helps)
+# Specify outcome with df$y
+
+# Import CSV files with readr::read_csv() from tidyverse
+(df <- read_csv("data/StateData.csv"))
+
+# Import other formats with rio::import() from rio
+(df <- import("data/StateData.xlsx") %>% as_tibble())
+
+# or...
+
+df <- import("data/StateData.xlsx") %>%
+  as_tibble() %>%
+  select(state_code, 
+    psychRegions,
+    instagram:modernDance) %>% 
+  mutate(psychRegions = as.factor(psychRegions)) %>%
+  rename(y = psychRegions) %>%
+  print()
+```
+### :apple: 2.8.3 Clean up
+```r
+# Clear environment
+rm(list = ls()) 
+
+# Clear packages
+p_unload(all)  # Remove all add-ons
+detach("package:datasets", unload = TRUE)  # For base
+
+# Clear console
+cat("\014")  # ctrl+L
+
+# Clear mind :)
+```
+Packages can be found for free and downloaded from the Comprehensive R Archive Network (CRAN) website.
 - CRAN has over 15,000 packages available for R, and packages can be searched by topic using CRAN task views
 - Each package has a reference manual that provides instructions for using the package
