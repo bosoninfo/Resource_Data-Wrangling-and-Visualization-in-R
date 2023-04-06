@@ -586,9 +586,8 @@ df %>%
 ```
 > <img src="https://user-images.githubusercontent.com/19381768/230255817-1b160fba-35a1-43ea-a2a5-24e9ec82c822.png" width=50%/>
 
+#### HAPPINESS AND HEALTH
 ```r
-# HAPPINESS AND HEALTH #####################################
-
 # Bar chart of health
 df %>%
   ggplot() + 
@@ -597,22 +596,45 @@ df %>%
     axis.title.x = element_blank(), 
     legend.position = "none"
   )
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230256236-c98779dd-30fb-4435-86a6-87ca95f22f0a.png" width=50%/>
 
+```r
 # Frequencies of health
 df %>% count(health)
-
+```
+<blockquote>
+    
+```
+# A tibble: 5 × 2
+  health        n
+  <fct>     <int>
+1 poor       1996
+2 fair       6585
+3 good      15791
+4 excellent 11022
+5 NA        10909
+```
+</blockquote>
+    
+```r
 # 100% stacked bar chart
 df %>%
   filter(!is.na(health)) %>%
   ggplot(aes(health, fill = happy)) + 
   geom_bar(position = "fill")
 # Looks pretty linear; should be a good predictor as is
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230258022-558bc594-1695-4907-9e0f-4e53e72e4c16.png" width=50%/>
 
-# HAPPINESS AND YEAR OF SURVEY #############################
-
+#### HAPPINESS AND YEAR OF SURVEY
+```r
 # Histogram of year
 df %>% qplot(year, binwidth = 5, data = .)
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230258902-ecc7364c-eaf0-4052-ae4a-80f5ce301fdc.png" width=50%/>
 
+```r
 # Descriptive statistics for year
 df %>% select(year) %>% summary()
 # This the year of the survey, so it might reflect
