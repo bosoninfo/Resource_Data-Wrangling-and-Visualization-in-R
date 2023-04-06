@@ -57,3 +57,34 @@ In addition, you can set a lot of other options for working in RStudio.
 
 RStudio is customizable and adaptable to your own preferences and work flow. It's an amazing environment for getting an overall picture of what's happening with your data, writing code, seeing the results, stepping through it, and getting a much richer picture of what's going on.
 
+## :herb: 2.5 Entering data
+
+### :apple: 2.5.1 Basic commands
+- Small sets of data can be entered directly into R through the script window.
+- Basic math can be performed in R. For example, `2 + 2` returns 4.
+
+```r
+2+2  # Basic math; press cmd/ctrl enter
+1:100  # Prints numbers 1 to 100 across several lines
+print("Hello, World!")  # Prints "Hello, World" in console
+```
+### :apple: 2.5.2 Assigning values
+- To save information into variables, use the assignment operator (<-). For example, `a <- 1`.
+```r
+# Individual values
+a <- 1            # Use <- and not =
+2 -> b            # Can go other way, but silly
+c <- d <- e <- 3  # Multiple assignments
+
+# Multiple values
+x <- c(1, 2, 5, 9)  # c = Combine/collect/concatenate
+x                   # Print contents of x in Console
+```
+### :apple: 2.5.3 Sequences
+- It is considered bad form to assign a value first and then the variable name.
+- Multiple values can be assigned simultaneously using the `c()` command.
+- Sequences can be created using the colon operator (:), or the `seq()` command.
+```r
+```
+- Simple math operations can be performed in R, such as addition and multiplication using the `+` and `*` operators respectively.
+- To simultaneously save a command and show it in the console, surround the command with parentheses.
