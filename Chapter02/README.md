@@ -402,6 +402,6 @@ cat("\014")  # ctrl+L
 
 # Clear mind :)
 ```
-Packages can be found for free and downloaded from the Comprehensive R Archive Network (CRAN) website.
+Packages can be found for free and downloaded from [the Comprehensive R Archive Network (CRAN) website](https://cran.r-project.org/index.html).
 - CRAN has over 15,000 packages available for R, and packages can be searched by topic using CRAN task views
 - Each package has a reference manual that provides instructions for using the package
