@@ -170,9 +170,9 @@ levels(df$happy)
 - Health is the last variable examined, and it appears that people who say they are in excellent health tend to say that they're very happy.
 - The year of the survey and age are also examined.
 - Density plots and box plots are used to examine the associations between happiness and year of survey, age, and year born.
-```r
-# OUTCOME VARIABLE: HAPPINESS ##############################
 
+#### OUTCOME VARIABLE: HAPPINESS
+```r
 # Bar chart of happy
 df %>%
   ggplot() + 
@@ -213,9 +213,9 @@ df %>% count(happy)
 2 pretty happy  25874
 3 not too happy  5629
 ```
-```r
-# HAPPINESS AND GENDER #####################################
 
+#### HAPPINESS AND GENDER
+```r
 # Bar chart of sex
 df %>%
   ggplot() + 
@@ -230,15 +230,25 @@ df %>%
 ```r
 # Frequencies for sex
 df %>% count(sex)
-
+```
+```
+# A tibble: 2 × 2
+  sex        n
+  <fct>  <int>
+1 male   20357
+2 female 25946
+```
+```r
 # 100% stacked bar chart
 df %>%
   ggplot(aes(sex, fill = happy)) + 
   geom_bar(position = "fill")
 # Looks pretty similar
+```
+<img src="https://user-images.githubusercontent.com/19381768/230247293-09ae5036-f478-4775-a2b3-39e6e37f4e41.png" width=50%/>
 
-# HAPPINESS AND MARITAL STATUS #############################
-
+#### HAPPINESS AND MARITAL STATUS
+```r
 # Bar chart of marital
 df %>%
   ggplot() + 
@@ -247,10 +257,25 @@ df %>%
     axis.title.x = element_blank(), 
     legend.position = "none"
   )
+```
+<img src="https://user-images.githubusercontent.com/19381768/230247658-5f3112d1-218d-49f5-8382-de135a205696.png" width=50%/>
 
+```r
 # Frequencies for marital
 df %>% count(marital)
-
+```
+```
+# A tibble: 6 × 2
+  marital           n
+  <fct>         <int>
+1 married       25662
+2 never married  8979
+3 divorced       5385
+4 widowed        4652
+5 separated      1618
+6 NA                7
+```
+```r
 # 100% stacked bar chart
 df %>%
   filter(!is.na(marital)) %>%
