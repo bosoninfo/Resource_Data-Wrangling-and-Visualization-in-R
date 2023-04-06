@@ -383,7 +383,7 @@ df %>%
 ```
 > <img src="https://user-images.githubusercontent.com/19381768/230249891-6e886fb6-4a36-4470-88fe-22affa53772e.png" width=50%/>
 
-#### HAPPINESS AND LEVEL OF EDUCATION
+#### 1.2.3.4 HAPPINESS AND LEVEL OF EDUCATION
 ```r
 # Bar chart of degree
 df %>%
@@ -482,7 +482,7 @@ df %>%
 ```
 > <img src="https://user-images.githubusercontent.com/19381768/230250993-cf913934-f2f5-41f8-bd22-2ae1d6bf9bf4.png" width=50%/>
 
-#### HAPPINESS AND FINANCIAL STATUS
+#### 1.2.3.5 HAPPINESS AND FINANCIAL STATUS
 ```r
 # Bar chart of finrela
 df %>%
@@ -588,7 +588,7 @@ df %>%
 ```
 > <img src="https://user-images.githubusercontent.com/19381768/230255817-1b160fba-35a1-43ea-a2a5-24e9ec82c822.png" width=50%/>
 
-#### HAPPINESS AND HEALTH
+#### 1.2.3.6 HAPPINESS AND HEALTH
 ```r
 # Bar chart of health
 df %>%
@@ -629,7 +629,7 @@ df %>%
 ```
 > <img src="https://user-images.githubusercontent.com/19381768/230258022-558bc594-1695-4907-9e0f-4e53e72e4c16.png" width=50%/>
 
-#### HAPPINESS AND YEAR OF SURVEY
+#### 1.2.3.7 HAPPINESS AND YEAR OF SURVEY
 ```r
 # Histogram of year
 df %>% qplot(year, binwidth = 5, data = .)
@@ -680,7 +680,7 @@ df %>%
 ```
 > <img src="https://user-images.githubusercontent.com/19381768/230259973-6be487bc-b247-47d3-8523-858213f9d758.png" width=50%/>
 
-#### HAPPINESS AND AGE
+#### 1.2.3.8 HAPPINESS AND AGE
 ```r
 # Histogram of age
 df %>% qplot(age, binwidth = 5, data = .)
@@ -732,7 +732,7 @@ df %>%
 ```
 > <img src="https://user-images.githubusercontent.com/19381768/230260753-9fc9ac51-da7c-4671-8e15-2e93a19499ed.png" width=50%/>
 
-#### HAPPINESS AND YEAR BORN
+#### 1.2.3.9 HAPPINESS AND YEAR BORN
 ```r
 # Calculate year of birth
 df %<>%
@@ -785,9 +785,9 @@ df %>%
 # No obvious differences
 ```
 > <img src="https://user-images.githubusercontent.com/19381768/230261339-899a3c12-ba15-46f1-a7de-ef88200178fa.png" width=50%/>
-```r
-# CLEAN UP #################################################
 
+#### 1.2.3.10 CLEAN UP
+```r
 # Clear data
 rm(list = ls())  # Removes all objects from environment
 
