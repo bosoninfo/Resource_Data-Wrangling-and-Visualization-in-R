@@ -45,9 +45,15 @@ Once you've installed RStudio, you'll see a collection of window panes that brea
 - Next to the files pane is the packages pane. This is where you can see additional bits of code that you can install into R to give it extra functionality.
 - You'll also find the help pane and viewers for certain kinds of interactive graphs.
 
-In addition, you can set a lot of other options for working in RStudio. There are keyboard commands that you can modify, and you can zoom in and out of different panes.
+|![image](https://user-images.githubusercontent.com/19381768/230288889-ad90afd2-3e95-448a-bc56-9769ccce7dba.png)|
+|:--:|
+|RStudio windows|
 
-It's also possible to set a margin for your code. This is useful if you're working on a small screen. You can set this in Options -> Preferences -> Code -> Display.
+In addition, you can set a lot of other options for working in RStudio. 
+- There are keyboard commands that you can modify, Tools -> Keyboard Shortcuts Help
+- Also, you can zoom in and out of different panes. 
+- It's also possible to set a margin for your code. This is useful if you're working on a small screen. You can set this in Options -> Preferences -> Code -> Display -> Show margin -> Margin column.
+- Under the same prompt, you can change the Appearance to set up the theme for the editor.
 
 RStudio is customizable and adaptable to your own preferences and work flow. It's an amazing environment for getting an overall picture of what's happening with your data, writing code, seeing the results, stepping through it, and getting a much richer picture of what's going on.
 
