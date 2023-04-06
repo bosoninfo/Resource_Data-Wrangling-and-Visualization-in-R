@@ -88,7 +88,7 @@ pacman::p_load(pacman, magrittr, productplots, psych,
 names(happy)
 ```
 <blockquote>
-
+  
 ```
 [1] "id"      "happy"   "year"    "age"     "sex"     "marital" "degree"  "finrela" "health"  "wtssall"
 ```
@@ -376,9 +376,11 @@ df %>%
   geom_bar(position = "fill")
 # Married group has more in "very happy" and fewer in "not
 # too happy"
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230249891-6e886fb6-4a36-4470-88fe-22affa53772e.png" width=50%/>
 
-# HAPPINESS AND LEVEL OF EDUCATION #########################
-
+#### HAPPINESS AND LEVEL OF EDUCATION
+```r
 # Bar chart of degree
 df %>%
   ggplot() + 
@@ -387,10 +389,29 @@ df %>%
     axis.title.x = element_blank(), 
     legend.position = "none"
   )
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230249984-932b9bd5-b783-4fa7-a4ca-7138c3d110c2.png" width=50%/>
 
+```r
 # Frequencies of degree
 df %>% count(degree)
-
+```
+<blockquote>
+  
+```
+# A tibble: 6 × 2
+  degree             n
+  <fct>          <int>
+1 lt high school 11053
+2 high school    23880
+3 junior college  2252
+4 bachelor        6134
+5 graduate        2840
+6 NA               144
+```
+</blockquote>
+    
+```r
 # 100% stacked bar chart
 df %>%
   filter(!is.na(degree)) %>%
@@ -398,7 +419,10 @@ df %>%
   geom_bar(position = "fill")
 # Things look bad for "lt high school" with only small
 # differences between other groups?
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230250362-5524a88a-91cf-4fc0-8bac-94502f265dda.png" width=50%/>
 
+```r
 # Create dichotomous college/not variable for exploration
 df %<>%
   mutate(
@@ -410,17 +434,52 @@ df %<>%
       "yes", "no")
   ) %>%
   print()
-
+```
+<blockquote>
+    
+```
+# A tibble: 46,303 × 10
+   happy          year   age sex    marital       degree         finrela       health    married college
+   <fct>         <dbl> <dbl> <fct>  <fct>         <fct>          <fct>         <fct>     <fct>   <chr>  
+ 1 not too happy  1972    23 female never married bachelor       average       good      no      yes    
+ 2 not too happy  1972    70 male   married       lt high school above average fair      yes     no     
+ 3 pretty happy   1972    48 female married       high school    average       excellent yes     no     
+ 4 not too happy  1972    27 female married       bachelor       average       good      yes     yes    
+ 5 pretty happy   1972    61 female married       high school    above average good      yes     no     
+ 6 pretty happy   1972    26 male   never married high school    above average good      no      no     
+ 7 not too happy  1972    28 male   divorced      high school    above average excellent no      no     
+ 8 not too happy  1972    27 male   never married bachelor       average       good      no      yes    
+ 9 pretty happy   1972    21 female never married high school    average       excellent no      no     
+10 pretty happy   1972    30 female married       high school    below average fair      yes     no     
+# ℹ 46,293 more rows
+# ℹ Use `print(n = ...)` to see more rows
+```
+</blockquote>
+  
+```r
 # Frequencies of college
 df %>% count(college)
-
+```
+<blockquote>
+```
+# A tibble: 2 × 2
+  college     n
+  <chr>   <int>
+1 no      35077
+2 yes     11226
+```
+</blockquote>
+  
+```r
 # 100% stacked bar chart
 df %>%
   ggplot(aes(college, fill = happy)) + 
   geom_bar(position = "fill")
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230250993-cf913934-f2f5-41f8-bd22-2ae1d6bf9bf4.png" width=50%/>
 
-# HAPPINESS AND FINANCIAL STATUS ###########################
-
+#### HAPPINESS AND FINANCIAL STATUS
+```r
 # Bar chart of finrela
 df %>%
   ggplot() + 
@@ -429,7 +488,10 @@ df %>%
     axis.title.x = element_blank(), 
     legend.position = "none"
   )
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230251104-9fcb6744-4196-4263-8080-d33f25015598.png" width=50%/>
 
+```r
 # Frequencies for finrela
 df %>% count(finrela)
 
