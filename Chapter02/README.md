@@ -68,6 +68,7 @@ RStudio is customizable and adaptable to your own preferences and work flow. It'
 1:100  # Prints numbers 1 to 100 across several lines
 print("Hello, World!")  # Prints "Hello, World" in console
 ```
+
 ### :apple: 2.5.2 Assigning values
 - To save information into variables, use the assignment operator (<-). For example, `a <- 1`.
 ```r
@@ -80,11 +81,41 @@ c <- d <- e <- 3  # Multiple assignments
 x <- c(1, 2, 5, 9)  # c = Combine/collect/concatenate
 x                   # Print contents of x in Console
 ```
+
 ### :apple: 2.5.3 Sequences
 - It is considered bad form to assign a value first and then the variable name.
 - Multiple values can be assigned simultaneously using the `c()` command.
 - Sequences can be created using the colon operator (:), or the `seq()` command.
 ```r
+# Create sequential data
+0:10     # 0 through 10
+10:0     # 10 through 0
+seq(10)  # 1 to 10
+seq(30, 0, by = -3)  # Count down by 3
 ```
+
+### :apple: 2.5.4 Math
 - Simple math operations can be performed in R, such as addition and multiplication using the `+` and `*` operators respectively.
 - To simultaneously save a command and show it in the console, surround the command with parentheses.
+```r
+# Surround command with parentheses to also print
+(y <- c(5, 1, 0, 10)) 
+x           # Take another look at x
+x + y       # Adds corresponding elements in x and y
+x * 2       # Multiplies each element in x by 2
+2^6         # Powers/exponents
+sqrt(64)    # Square root
+log(100)    # Natural log: base e (2.71828...); NOT "ln"
+log10(100)  # Base 10 log
+```
+
+### :apple: 2.5.5 Clean up
+```r
+# Clear environment
+rm(list = ls()) 
+
+# Clear console
+cat("\014")  # ctrl+L
+
+# Clear mind :)
+```
