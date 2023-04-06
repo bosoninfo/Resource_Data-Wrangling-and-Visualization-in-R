@@ -195,7 +195,7 @@ levels(df$happy)
 - The year of the survey and age are also examined.
 - Density plots and box plots are used to examine the associations between happiness and year of survey, age, and year born.
 
-#### OUTCOME VARIABLE: HAPPINESS
+#### 1.2.3.1 OUTCOME VARIABLE: HAPPINESS
 ```r
 # Bar chart of happy
 df %>%
@@ -245,7 +245,7 @@ df %>% count(happy)
 ```
 </blockquote>
   
-#### HAPPINESS AND GENDER
+#### 1.2.3.2 HAPPINESS AND GENDER
 ```r
 # Bar chart of sex
 df %>%
@@ -282,7 +282,7 @@ df %>%
 ```
 > <img src="https://user-images.githubusercontent.com/19381768/230247293-09ae5036-f478-4775-a2b3-39e6e37f4e41.png" width=50%/>
 
-#### HAPPINESS AND MARITAL STATUS
+#### 1.2.3.3 HAPPINESS AND MARITAL STATUS
 ```r
 # Bar chart of marital
 df %>%
