@@ -800,5 +800,6 @@ cat("\014")  # Mimics ctrl+L
 # Clear mind :)
 ```
 
+### 1.2.4 Summary
 - The point of visualization and wrangling the data is not to reach final conclusions, but to raise questions and guide further investigation.
 - Visualization and wrangling the data can help to organize the data into a form that's best suited for answering questions and getting the visualizations that give insight and ideas for analysis.
