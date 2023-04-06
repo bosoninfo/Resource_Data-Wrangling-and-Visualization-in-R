@@ -423,3 +423,13 @@ Packages can be found for free and downloaded from [the Comprehensive R Archive 
   - forcats for working with categorical data
 - The Tidyverse makes R a specific dialect.
 - The Tidyverse is used throughout this course because it provides clarity in work and includes important functionalities such as pipes and ggplot2.
+
+## :herb: 2.10 Piping commands with %>%
+
+- The piping character in R is represented by the percent signs with the greater than symbol in the middle: `%>%`
+- The piping character is included as part of the Tidyverse package.
+- Piping commands dramatically changes the way you write code and it makes it easier to follow the logic of the code.
+- To pipe a command in R, start with the data followed by the piping character, then the function with its arguments.
+- You can read a piped command like this: the data is fed to function number one with argument number one, which is fed to function number two with argument number two, which is fed to function number three with argument number three.
+- This sequence makes it easy to troubleshoot, follow and share your code.
+- The Tidyverse package includes other packages such as ggplot2, dplyr, tidyr, readr, and stringr, among others.
