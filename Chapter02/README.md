@@ -119,3 +119,58 @@ cat("\014")  # ctrl+L
 
 # Clear mind :)
 ```
+## :herb: 2.6 Data types and structures
+
+### :apple: 2.6.1 Data types
+
+- Numeric: the most common data type in R, doubles precision numbers are the default
+  - Use the `typeof()` command to check the data type of a variable
+```r
+n1 <- 15  # Double precision by default
+n1
+typeof(n1)
+
+n2 <- 1.5
+n2
+typeof(n2)
+```
+
+- Character: use quotes to define a character variable
+  - R does not differentiate between a single character and a collection of characters
+```r
+c1 <- "c"
+c1
+typeof(c1)
+
+c2 <- "a string of text"
+c2
+typeof(c2)
+```
+- Logical: boolean or binary variables with the values `TRUE` or `FALSE`, are not in quotes and must be in all caps
+```r
+l1 <- TRUE
+l1
+typeof(l1)
+
+l2 <- F
+l2
+typeof(l2)
+```
+
+### :apple: 2.6.2 Data structures
+- Vector: a collection of numbers of the same data type, even a single number is considered a vector of size one
+  - Use the `c()` function to concatenate values and create a vector
+- Matrix: a two-dimensional structure with rows and columns of the same length and data type
+  - Use the `matrix()` function to create a matrix
+- Array: a multidimensional structure with data points in each column, row, or table of the same data type
+  - Use the `array()` function to create an array
+- Data frame: the most common data structure in R, allows for different data types in the same memory object
+  - Use the `data.frame()` function to create a data frame
+- List: a flexible data structure that can contain different variable types and lengths
+  - Use the `list()` function to create a list
+
+### Coercing
+
+- Coercing refers to converting a variable from one data type or structure to another
+- Automatic coercion happens when R converts to the least restrictive data type
+- Use `as.integer()`, `as.numeric()`, or `as.data.frame()` to specify the data type or structure to convert to
