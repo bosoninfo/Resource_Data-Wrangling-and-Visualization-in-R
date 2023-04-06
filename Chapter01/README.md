@@ -1,5 +1,7 @@
 # 1 WHAT IS R?
 
+[[_TOC_]]
+
 ## 1.1 R in Context
 
 In this section, we will discuss where R fits in the data science toolbox and its popularity among professionals.
@@ -494,14 +496,33 @@ df %>%
 ```r
 # Frequencies for finrela
 df %>% count(finrela)
+```
+<blockquote>
 
+```r
+# A tibble: 6 × 2
+  finrela               n
+  <fct>             <int>
+1 far below average  2408
+2 below average     10824
+3 average           23241
+4 above average      8482
+5 far above average   887
+6 NA                  461
+```
+</blockquote>
+    
+```r
 # 100% stacked bar chart
 df %>%
   filter(!is.na(finrela)) %>%
   ggplot(aes(finrela, fill = happy)) + 
   geom_bar(position = "fill")
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230254100-5f5a3469-b178-4e2e-b007-6590c3e7f711.png" width=50%/>
 
-# Create dichotomous varible for average finances or higher
+```r
+# Create dichotomous variable for average finances or higher
 df %<>%
   mutate(
     avg_fin = case_when(
@@ -517,17 +538,55 @@ df %<>%
       finrela == "NA" ~ "NA")
   ) %>%
   print()
-
+```
+<blockquote>
+    
+```
+# A tibble: 46,303 × 11
+   happy          year   age sex    marital       degree         finrela       health    married college avg_fin
+   <fct>         <dbl> <dbl> <fct>  <fct>         <fct>          <fct>         <fct>     <fct>   <chr>   <chr>  
+ 1 not too happy  1972    23 female never married bachelor       average       good      no      yes     yes    
+ 2 not too happy  1972    70 male   married       lt high school above average fair      yes     no      yes    
+ 3 pretty happy   1972    48 female married       high school    average       excellent yes     no      yes    
+ 4 not too happy  1972    27 female married       bachelor       average       good      yes     yes     yes    
+ 5 pretty happy   1972    61 female married       high school    above average good      yes     no      yes    
+ 6 pretty happy   1972    26 male   never married high school    above average good      no      no      yes    
+ 7 not too happy  1972    28 male   divorced      high school    above average excellent no      no      yes    
+ 8 not too happy  1972    27 male   never married bachelor       average       good      no      yes     yes    
+ 9 pretty happy   1972    21 female never married high school    average       excellent no      no      yes    
+10 pretty happy   1972    30 female married       high school    below average fair      yes     no      no     
+# ℹ 46,293 more rows
+# ℹ Use `print(n = ...)` to see more rows
+```
+</blockquote>
+    
+```r
 # Get frequencies
 df %>% count(avg_fin)
-
+```
+<blockquote>
+    
+```
+# A tibble: 3 × 2
+  avg_fin     n
+  <chr>   <int>
+1 no      13232
+2 yes     32610
+3 NA        461
+```
+</blockquote>
+    
+```r
 # 100% stacked bar chart
 df %>%
   filter(!is.na(avg_fin)) %>%
   ggplot(aes(avg_fin, fill = happy)) + 
   geom_bar(position = "fill")
 # Big differences in both "very happy" and "not too happy"
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230255817-1b160fba-35a1-43ea-a2a5-24e9ec82c822.png" width=50%/>
 
+```r
 # HAPPINESS AND HEALTH #####################################
 
 # Bar chart of health
