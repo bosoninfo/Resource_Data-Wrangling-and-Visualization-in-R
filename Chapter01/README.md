@@ -2,7 +2,7 @@
 
 |Table of Sections|
 |--|
-|:herb:  [1.1 R in Context](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#11-r-in-context)<br>:herb:  [1.1.1 Tools for working with data](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#111-tools-for-working-with-data)<br>:herb:  [1.1.2 Spreadsheets for working with data](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#112-spreadsheets-for-working-with-data)|
+|:herb:  [1.1 R in Context](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#11-r-in-context)<br>-- :apple: [1.1.1 Tools for working with data](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#111-tools-for-working-with-data)<br>-- :apple: [1.1.2 Spreadsheets for working with data](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#112-spreadsheets-for-working-with-data)|
 
 ## 1.1 R in Context
 
