@@ -779,7 +779,9 @@ df %>%
   xlab("") +
   theme(legend.position = "none")
 # No obvious differences
-
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230261339-899a3c12-ba15-46f1-a7de-ef88200178fa.png" width=50%/>
+```r
 # CLEAN UP #################################################
 
 # Clear data
