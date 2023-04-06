@@ -178,7 +178,7 @@ is.vector(v3)
 ```
 
 #### :bread: 2.6.2.2 Matrix
-- A two-dimensional structure with rows and columns of the **same length and data type**
+- A two-dimensional structure with rows and columns of the ***same length and data type***
 - Use the `matrix()` function to create a matrix
 ```r
 m1 <- matrix(c(T, T, F, F, T, F), nrow = 2)
