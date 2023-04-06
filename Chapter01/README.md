@@ -182,21 +182,21 @@ df %>%
     legend.position = "none"
   )
 ```
-<img src="https://user-images.githubusercontent.com/19381768/230099937-5d344c73-ac5c-4aa2-8610-90db7a95f840.png" width=50%/>
+> <img src="https://user-images.githubusercontent.com/19381768/230099937-5d344c73-ac5c-4aa2-8610-90db7a95f840.png" width=50%/>
 
 ```r
 # Frequencies for happy
 df %>% count(happy)
 ```
-```
-# A tibble: 4 × 2
-  happy             n
-  <fct>         <int>
-1 very happy    14800
-2 pretty happy  25874
-3 not too happy  5629
-4 NA             4717
-```
+> ```
+> # A tibble: 4 × 2
+>   happy             n
+>   <fct>         <int>
+> 1 very happy    14800
+> 2 pretty happy  25874
+> 3 not too happy  5629
+> 4 NA             4717
+> ```
 ```r
 # Filter out the NA responses on happy
 df %<>%
@@ -205,14 +205,14 @@ df %<>%
 # Frequencies for happy
 df %>% count(happy)
 ```
-```
-# A tibble: 3 × 2
-  happy             n
-  <fct>         <int>
-1 very happy    14800
-2 pretty happy  25874
-3 not too happy  5629
-```
+> ```
+> # A tibble: 3 × 2
+>   happy             n
+>   <fct>         <int>
+> 1 very happy    14800
+> 2 pretty happy  25874
+> 3 not too happy  5629
+> ```
 
 #### HAPPINESS AND GENDER
 ```r
@@ -225,19 +225,19 @@ df %>%
     legend.position = "none"
   )
 ```
-<img src="https://user-images.githubusercontent.com/19381768/230102773-473473ed-cbf8-49b6-bf48-d99bde4315bb.png" width=50%/>
+> <img src="https://user-images.githubusercontent.com/19381768/230102773-473473ed-cbf8-49b6-bf48-d99bde4315bb.png" width=50%/>
 
 ```r
 # Frequencies for sex
 df %>% count(sex)
 ```
-```
-# A tibble: 2 × 2
-  sex        n
-  <fct>  <int>
-1 male   20357
-2 female 25946
-```
+> ```
+> # A tibble: 2 × 2
+>   sex        n
+>   <fct>  <int>
+> 1 male   20357
+> 2 female 25946
+> ```
 ```r
 # 100% stacked bar chart
 df %>%
@@ -245,7 +245,7 @@ df %>%
   geom_bar(position = "fill")
 # Looks pretty similar
 ```
-<img src="https://user-images.githubusercontent.com/19381768/230247293-09ae5036-f478-4775-a2b3-39e6e37f4e41.png" width=50%/>
+> <img src="https://user-images.githubusercontent.com/19381768/230247293-09ae5036-f478-4775-a2b3-39e6e37f4e41.png" width=50%/>
 
 #### HAPPINESS AND MARITAL STATUS
 ```r
@@ -258,30 +258,33 @@ df %>%
     legend.position = "none"
   )
 ```
-<img src="https://user-images.githubusercontent.com/19381768/230247658-5f3112d1-218d-49f5-8382-de135a205696.png" width=50%/>
+> <img src="https://user-images.githubusercontent.com/19381768/230247658-5f3112d1-218d-49f5-8382-de135a205696.png" width=50%/>
 
 ```r
 # Frequencies for marital
 df %>% count(marital)
 ```
-```
-# A tibble: 6 × 2
-  marital           n
-  <fct>         <int>
-1 married       25662
-2 never married  8979
-3 divorced       5385
-4 widowed        4652
-5 separated      1618
-6 NA                7
-```
+> ```
+> # A tibble: 6 × 2
+>   marital           n
+>   <fct>         <int>
+> 1 married       25662
+> 2 never married  8979
+> 3 divorced       5385
+> 4 widowed        4652
+> 5 separated      1618
+> 6 NA                7
+> ```
 ```r
 # 100% stacked bar chart
 df %>%
   filter(!is.na(marital)) %>%
   ggplot(aes(marital, fill = happy)) + 
   geom_bar(position = "fill")
-
+```
+> <img src="https://user-images.githubusercontent.com/19381768/230248454-fa46da06-a1ca-4125-895e-9f8765dd9d3a.png" width=50%/>
+  
+```r
 # Create dichotmous married/not variable
 df %<>%
   mutate(
@@ -292,7 +295,25 @@ df %<>%
   ) %>%
   mutate(married = as.factor(married)) %>%
  print()
-
+```
+> ```
+> # A tibble: 46,303 × 9
+>    happy          year   age sex    marital       degree         finrela       health    married
+>    <fct>         <dbl> <dbl> <fct>  <fct>         <fct>          <fct>         <fct>     <fct>  
+>  1 not too happy  1972    23 female never married bachelor       average       good      no     
+>  2 not too happy  1972    70 male   married       lt high school above average fair      yes    
+>  3 pretty happy   1972    48 female married       high school    average       excellent yes    
+>  4 not too happy  1972    27 female married       bachelor       average       good      yes    
+>  5 pretty happy   1972    61 female married       high school    above average good      yes    
+>  6 pretty happy   1972    26 male   never married high school    above average good      no     
+>  7 not too happy  1972    28 male   divorced      high school    above average excellent no     
+>  8 not too happy  1972    27 male   never married bachelor       average       good      no     
+>  9 pretty happy   1972    21 female never married high school    average       excellent no     
+> 10 pretty happy   1972    30 female married       high school    below average fair      yes    
+> # ℹ 46,293 more rows
+> # ℹ Use `print(n = ...)` to see more rows
+> ```
+```r
 # Frequencies for married
 df %>% count(married)
 
