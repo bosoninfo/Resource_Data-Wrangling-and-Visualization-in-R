@@ -122,9 +122,9 @@ cat("\014")  # ctrl+L
 ## :herb: 2.6 Data types and structures
 
 ### :apple: 2.6.1 Data types
-
-- Numeric: the most common data type in R, doubles precision numbers are the default
-  - Use the `typeof()` command to check the data type of a variable
+#### :bread: 2.6.1.1 Numeric
+- The most common data type in R, doubles precision numbers are the default
+- Use the `typeof()` command to check the data type of a variable
 ```r
 n1 <- 15  # Double precision by default
 n1
@@ -135,8 +135,9 @@ n2
 typeof(n2)
 ```
 
-- Character: use quotes to define a character variable
-  - R does not differentiate between a single character and a collection of characters
+#### :bread: 2.6.1.2 Character
+- Use quotes to define a character variable
+- R does not differentiate between a single character and a collection of characters
 ```r
 c1 <- "c"
 c1
@@ -146,7 +147,9 @@ c2 <- "a string of text"
 c2
 typeof(c2)
 ```
-- Logical: boolean or binary variables with the values `TRUE` or `FALSE`, are not in quotes and must be in all caps
+
+#### :bread: 2.6.1.3 Logical
+- Boolean or binary variables with the values `TRUE` or `FALSE`, are not in quotes and must be in all caps
 ```r
 l1 <- TRUE
 l1
@@ -158,8 +161,9 @@ typeof(l2)
 ```
 
 ### :apple: 2.6.2 Data structures
-- Vector: a collection of numbers of the same data type, even a single number is considered a vector of size one
-  - Use the `c()` function to concatenate values and create a vector
+#### :bread: 2.6.2.1 Vector
+- A collection of numbers of the same data type, even a single number is considered a vector of size one
+- Use the `c()` function to concatenate values and create a vector
 ```r
 v1
 is.vector(v1)
@@ -172,17 +176,102 @@ v3 <- c(TRUE, TRUE, FALSE, FALSE, TRUE)
 v3
 is.vector(v3)
 ```
-- Matrix: a two-dimensional structure with rows and columns of the same length and data type
-  - Use the `matrix()` function to create a matrix
-- Array: a multidimensional structure with data points in each column, row, or table of the same data type
-  - Use the `array()` function to create an array
-- Data frame: the most common data structure in R, allows for different data types in the same memory object
-  - Use the `data.frame()` function to create a data frame
-- List: a flexible data structure that can contain different variable types and lengths
-  - Use the `list()` function to create a list
 
-### Coercing
+#### :bread: 2.6.2.2 Matrix
+- A two-dimensional structure with rows and columns of the same length and data type
+- Use the `matrix()` function to create a matrix
+```r
+m1 <- matrix(c(T, T, F, F, T, F), nrow = 2)
+m1
 
+m2 <- matrix(c("a", "b", 
+               "c", "d"), 
+               nrow = 2,
+               byrow = T)
+m2
+```
+#### :bread: 2.6.2.3 Array
+- A multidimensional structure with data points in each column, row, or table of the same data type
+- Use the `array()` function to create an array
+```r
+# Give data, then dimensions (rows, columns, tables)
+a1 <- array(c( 1:24), c(4, 3, 2))
+a1
+```
+#### :bread: 2.6.2.4 Data Frame
+- The most common data structure in R, allows for different data types in the same memory object
+- Use the `data.frame()` function to create a data frame
+```r
+# Can combine vectors of the same length
+
+vNumeric   <- c(1, 2, 3)
+vCharacter <- c("a", "b", "c")
+vLogical   <- c(T, F, T)
+
+df1 <- cbind(vNumeric, vCharacter, vLogical)
+df1  # Coerces all values to most basic data type
+
+df2 <- as.data.frame(cbind(vNumeric, vCharacter, vLogical))
+df2  # Makes a data frame with three different data types
+```
+
+#### :bread: 2.6.2.5 List
+- A flexible data structure that can contain different variable types and lengths
+- Use the `list()` function to create a list
+```r
+o1 <- c(1, 2, 3)
+o2 <- c("a", "b", "c", "d")
+o3 <- c(T, F, T, T, F)
+
+list1 <- list(o1, o2, o3)
+list1
+
+list2 <- list(o1, o2, o3, list1)  # Lists within lists!
+list2
+```
+
+### :apple: 2.6.3 Coercing Types
 - Coercing refers to converting a variable from one data type or structure to another
 - Automatic coercion happens when R converts to the least restrictive data type
 - Use `as.integer()`, `as.numeric()`, or `as.data.frame()` to specify the data type or structure to convert to
+#### :bread: 2.6.3.1 Automatic Coercion
+```r
+# Goes to "least restrictive" data type
+
+(coerce1 <- c(1, "b", TRUE))
+typeof(coerce1)
+```
+#### :bread: 2.6.3.2 Coerce Numeric to Integer
+```r
+(coerce2 <- 5)
+typeof(coerce2)
+
+(coerce3 <- as.integer(5))
+typeof(coerce3)
+```
+#### :bread: 2.6.3.3 Coerce Character to Numeric
+```r
+(coerce4 <- c("1", "2", "3"))
+typeof(coerce4)
+
+(coerce5 <- as.numeric(c("1", "2", "3")))
+typeof(coerce5)
+```
+#### :bread: 2.6.3.4 Coerce Matrix to Data Frame
+```r
+(coerce6 <- matrix(1:9, nrow= 3))
+is.matrix(coerce6)
+
+(coerce7 <- as.data.frame(matrix(1:9, nrow= 3)))
+is.data.frame(coerce7)
+```
+### :apple: 2.6.4 Clean up
+```r
+# Clear environment
+rm(list = ls()) 
+
+# Clear console
+cat("\014")  # ctrl+L
+
+# Clear mind :)
+```
