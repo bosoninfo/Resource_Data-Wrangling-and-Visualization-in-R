@@ -160,6 +160,18 @@ typeof(l2)
 ### :apple: 2.6.2 Data structures
 - Vector: a collection of numbers of the same data type, even a single number is considered a vector of size one
   - Use the `c()` function to concatenate values and create a vector
+```r
+v1
+is.vector(v1)
+
+v2 <- c("a", "b", "c")
+v2
+is.vector(v2)
+
+v3 <- c(TRUE, TRUE, FALSE, FALSE, TRUE)
+v3
+is.vector(v3)
+```
 - Matrix: a two-dimensional structure with rows and columns of the same length and data type
   - Use the `matrix()` function to create a matrix
 - Array: a multidimensional structure with data points in each column, row, or table of the same data type
