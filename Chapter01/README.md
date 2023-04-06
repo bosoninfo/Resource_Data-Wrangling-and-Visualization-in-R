@@ -87,9 +87,9 @@ pacman::p_load(pacman, magrittr, productplots, psych,
 ?happy
 names(happy)
 ```
-```
-[1] "id"      "happy"   "year"    "age"     "sex"     "marital" "degree"  "finrela" "health"  "wtssall"
-```
+> ```
+> [1] "id"      "happy"   "year"    "age"     "sex"     "marital" "degree"  "finrela" "health"  "wtssall"
+> ```
 ```r
 # Info on productplots package
 # browseURL("http://j.mp/2GMXZCZ")  # Page on CRAN
@@ -101,23 +101,23 @@ df <- happy %>%
   as_tibble() %>%
   print()
 ```
-```
-# A tibble: 51,020 × 10
-      id happy          year   age sex    marital       degree         finrela       health    wtssall
-   <dbl> <fct>         <dbl> <dbl> <fct>  <fct>         <fct>          <fct>         <fct>       <dbl>
- 1     1 not too happy  1972    23 female never married bachelor       average       good        0.445
- 2     2 not too happy  1972    70 male   married       lt high school above average fair        0.889
- 3     3 pretty happy   1972    48 female married       high school    average       excellent   0.889
- 4     4 not too happy  1972    27 female married       bachelor       average       good        0.889
- 5     5 pretty happy   1972    61 female married       high school    above average good        0.889
- 6     6 pretty happy   1972    26 male   never married high school    above average good        0.445
- 7     7 not too happy  1972    28 male   divorced      high school    above average excellent   0.445
- 8     8 not too happy  1972    27 male   never married bachelor       average       good        0.445
- 9     9 pretty happy   1972    21 female never married high school    average       excellent   0.445
-10    10 pretty happy   1972    30 female married       high school    below average fair        0.889
-# ℹ 51,010 more rows
-# ℹ Use `print(n = ...)` to see more rows
-```
+> ```
+> # A tibble: 51,020 × 10
+>       id happy          year   age sex    marital       degree         finrela       health    wtssall
+>    <dbl> <fct>         <dbl> <dbl> <fct>  <fct>         <fct>          <fct>         <fct>       <dbl>
+>  1     1 not too happy  1972    23 female never married bachelor       average       good        0.445
+>  2     2 not too happy  1972    70 male   married       lt high school above average fair        0.889
+>  3     3 pretty happy   1972    48 female married       high school    average       excellent   0.889
+>  4     4 not too happy  1972    27 female married       bachelor       average       good        0.889
+>  5     5 pretty happy   1972    61 female married       high school    above average good        0.889
+>  6     6 pretty happy   1972    26 male   never married high school    above average good        0.445
+>  7     7 not too happy  1972    28 male   divorced      high school    above average excellent   0.445
+>  8     8 not too happy  1972    27 male   never married bachelor       average       good        0.445
+>  9     9 pretty happy   1972    21 female never married high school    average       excellent   0.445
+> 10    10 pretty happy   1972    30 female married       high school    below average fair        0.889
+> # ℹ 51,010 more rows
+> # ℹ Use `print(n = ...)` to see more rows
+> ```
 ```r
 # Delete id and wtssall, which is a weighting variable that
 # doesn't change results appreciably
@@ -125,30 +125,30 @@ df %<>%
   select(happy:health) %>%
   print()
 ```
-```
-# A tibble: 51,020 × 8
-   happy          year   age sex    marital       degree         finrela       health   
-   <fct>         <dbl> <dbl> <fct>  <fct>         <fct>          <fct>         <fct>    
- 1 not too happy  1972    23 female never married bachelor       average       good     
- 2 not too happy  1972    70 male   married       lt high school above average fair     
- 3 pretty happy   1972    48 female married       high school    average       excellent
- 4 not too happy  1972    27 female married       bachelor       average       good     
- 5 pretty happy   1972    61 female married       high school    above average good     
- 6 pretty happy   1972    26 male   never married high school    above average good     
- 7 not too happy  1972    28 male   divorced      high school    above average excellent
- 8 not too happy  1972    27 male   never married bachelor       average       good     
- 9 pretty happy   1972    21 female never married high school    average       excellent
-10 pretty happy   1972    30 female married       high school    below average fair     
-# ℹ 51,010 more rows
-# ℹ Use `print(n = ...)` to see more rows
-```
+> ```
+> # A tibble: 51,020 × 8
+>    happy          year   age sex    marital       degree         finrela       health   
+>    <fct>         <dbl> <dbl> <fct>  <fct>         <fct>          <fct>         <fct>    
+>  1 not too happy  1972    23 female never married bachelor       average       good     
+>  2 not too happy  1972    70 male   married       lt high school above average fair     
+>  3 pretty happy   1972    48 female married       high school    average       excellent
+>  4 not too happy  1972    27 female married       bachelor       average       good     
+>  5 pretty happy   1972    61 female married       high school    above average good     
+>  6 pretty happy   1972    26 male   never married high school    above average good     
+>  7 not too happy  1972    28 male   divorced      high school    above average excellent
+>  8 not too happy  1972    27 male   never married bachelor       average       good     
+>  9 pretty happy   1972    21 female never married high school    average       excellent
+> 10 pretty happy   1972    30 female married       high school    below average fair     
+> # ℹ 51,010 more rows
+> # ℹ Use `print(n = ...)` to see more rows
+> ```
 ```r
 # Check levels of "happy"
 levels(df$happy)
 ```
-```
-[1] "not too happy" "pretty happy"  "very happy" 
-```
+> ```
+> [1] "not too happy" "pretty happy"  "very happy" 
+> ```
 ```r
 # Reverse levels of "happy" so "very happy" is at the top of
 # stacked bar charts
@@ -157,9 +157,9 @@ df %<>%
 
 levels(df$happy)
 ```
-```
-[1] "very happy"    "pretty happy"  "not too happy"
-```
+> ```
+> [1] "very happy"    "pretty happy"  "not too happy"
+> ```
 ### 1.2.3 Outcome variable: happiness
 - The distribution of happiness is examined with a bar chart using ggplot2.
 - The cases where respondents did not answer the happiness question are excluded.
