@@ -1,26 +1,30 @@
 # 1 WHAT IS R?
 
-## 1.1 R in Context
+|Table of Sections|
+|--|
+|[🌿 1.1 R In Context](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-11-r-in-context)<br>+-- [🍎 1.1.1 Tools For Working With Data](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-111-tools-for-working-with-data)<br>+-- [🍎 1.1.2 Spreadsheets For Working With Data](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-112-spreadsheets-for-working-with-data)<br>+-- [🍎 1.1.3 Statistical Applications For Working With Data](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-113-statistical-applications-for-working-with-data)<br>+-- [🍎 1.1.4 Data-Oriented Programming Languages](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-114-dataoriented-programming-languages)<br>+-- [🍎 1.1.5 Comparison Of Different Data Tools](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-115-comparison-of-different-data-tools)<br>[🌿 1.2 Data Science With R: A Case Study](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-12-data-science-with-r-a-case-study)<br>+-- [🍎 1.2.1 Install And Load Packages](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-121-install-and-load-packages)<br>+-- [🍎 1.2.2 Load And Prepare Data](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-122-load-and-prepare-data)<br>+-- [🍎 1.2.3 Outcome Variable: Happiness](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-123-outcome-variable-happiness)<br>+----- [🍞 1.2.3.1 Outcome Variable: Happiness](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-1231-outcome-variable-happiness)<br>+----- [🍞 1.2.3.2 Happiness And Gender](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-1232-happiness-and-gender)<br>+----- [🍞 1.2.3.3 Happiness And Marital Status](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-1233-happiness-and-marital-status)<br>+----- [🍞 1.2.3.4 Happiness And Level Of Education](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-1234-happiness-and-level-of-education)<br>+----- [🍞 1.2.3.5 Happiness And Financial Status](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-1235-happiness-and-financial-status)<br>+----- [🍞 1.2.3.6 Happiness And Health](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-1236-happiness-and-health)<br>+----- [🍞 1.2.3.7 Happiness And Year Of Survey](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-1237-happiness-and-year-of-survey)<br>+----- [🍞 1.2.3.8 Happiness And Age](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-1238-happiness-and-age)<br>+----- [🍞 1.2.3.9 Happiness And Year Born](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-1239-happiness-and-year-born)<br>+----- [🍞 1.2.3.10 Clean Up](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-12310-clean-up)<br>+-- [🍎 1.2.4 Summary](https://github.com/bosoninfo/Resource_Data-Wrangling-and-Visualization-in-R/blob/main/Chapter01/README.md#-124-summary)|
+
+## :herb: 1.1 R in Context
 
 In this section, we will discuss where R fits in the data science toolbox and its popularity among professionals.
 
-### 1.1.1 Tools for working with data
+### :apple: 1.1.1 Tools for working with data
 
 There are many tools available for working with data, including spreadsheets and statistical applications. These tools offer user-friendly interfaces for data exploration and modeling. However, they may not be sufficient for all data tasks, especially those involving more complex questions or data formats.
 
-### 1.1.2 Spreadsheets for working with data
+### :apple: 1.1.2 Spreadsheets for working with data
 
 Spreadsheets, such as `Microsoft Excel` and `Google Sheets`, are ubiquitous and widely used for organizing and analyzing data. They offer flexibility in organizing data in a variety of formats and can sort, filter, count, and summarize data quickly. Spreadsheets can also create relatively sophisticated graphs and visualizations.
 
 While spreadsheets may be sufficient for many real-world data tasks, they may not be suitable for creating more complex statistical models. In these cases, more sophisticated tools like statistical applications or programming languages may be necessary. 
 
-### 1.1.3 Statistical Applications for working with data
+### :apple: 1.1.3 Statistical Applications for working with data
 
 Statistical applications, such as `SPSS`, `SAS`, and `Jamovi`, offer user-friendly point-and-click interfaces for data exploration and modeling. They are designed to handle large datasets and can perform a wide range of statistical analyses. These applications are commonly used in fields like psychology, social work, education, and business.
 
 While statistical applications are a powerful tool for data analysis, they may not be suitable for all data tasks. For example, they may not be able to handle data that does not fit neatly into rows and columns. In these cases, a more sophisticated tool like a data-oriented programming language may be necessary.
 
-### 1.1.4 Data-oriented programming languages
+### :apple: 1.1.4 Data-oriented programming languages
 
 Data-oriented programming languages, such as `Python`, `Julia`, and `R`, offer greater control and power in analyzing data. These languages allow for more advanced statistical modeling and data manipulation.
 
@@ -37,7 +41,7 @@ According to the KDnuggets Poll of data mining professionals from 2019,
 
 It's important for data science professionals to be proficient in multiple tools, including R, Python, Java, C++, and SQL. R is a major tool for many companies and fields and is often the tool of choice for common data tasks.
 
-### 1.1.5 Comparison of Different Data Tools
+### :apple: 1.1.5 Comparison of Different Data Tools
 
 | Tool | Advantages | Limitations |
 |---|---|---|
@@ -45,11 +49,11 @@ It's important for data science professionals to be proficient in multiple tools
 | Statistical applications | User-friendly point-and-click interfaces, designed to handle large datasets, perform complex analyses | May not be able to handle data that does not fit neatly into rows and columns                                             |
 | Data-oriented programming languages | Greater control and power in analyzing data, more advanced statistical modeling and data manipulation | Steeper learning curve, may require more coding expertise, less user-friendly than spreadsheets or statistical applications |
 
-## 1.2 Data science with R: A case study
+## :herb: 1.2 Data science with R: A case study
 
 R is capable of wrangling and visualizing data effectively. A case study based on actual data will be used to demonstrate these capabilities. 
 
-### 1.2.1 Install and load packages
+### :apple: 1.2.1 Install and load packages
 
 - A series of packages will be loaded to provide extra functionality.
 ```r
@@ -72,7 +76,7 @@ pacman::p_load(pacman, magrittr, productplots, psych,
 # RColorBrewer: for color palettes
 # tidyverse: for so many reasons
 ```
-### 1.2.2 Load and prepare data
+### :apple: 1.2.2 Load and prepare data
 - The data set from the Product Plots Package called `Happy` is used, which contains information on happiness from the General Social Survey.
 - The data set has over 50,000 observations.
 - The id and waiting variable are not necessary, and will be removed.
@@ -180,7 +184,7 @@ levels(df$happy)
 ```
 </blockquote>
   
-### 1.2.3 Outcome variable: happiness
+### :apple: 1.2.3 Outcome variable: happiness
 - The distribution of happiness is examined with a bar chart using ggplot2.
 - The cases where respondents did not answer the happiness question are excluded.
 - Gender is examined next, but no gender difference is observed.
@@ -191,7 +195,7 @@ levels(df$happy)
 - The year of the survey and age are also examined.
 - Density plots and box plots are used to examine the associations between happiness and year of survey, age, and year born.
 
-#### OUTCOME VARIABLE: HAPPINESS
+#### :bread: 1.2.3.1 OUTCOME VARIABLE: HAPPINESS
 ```r
 # Bar chart of happy
 df %>%
@@ -241,7 +245,7 @@ df %>% count(happy)
 ```
 </blockquote>
   
-#### HAPPINESS AND GENDER
+#### :bread: 1.2.3.2 HAPPINESS AND GENDER
 ```r
 # Bar chart of sex
 df %>%
@@ -278,7 +282,7 @@ df %>%
 ```
 > <img src="https://user-images.githubusercontent.com/19381768/230247293-09ae5036-f478-4775-a2b3-39e6e37f4e41.png" width=50%/>
 
-#### HAPPINESS AND MARITAL STATUS
+#### :bread: 1.2.3.3 HAPPINESS AND MARITAL STATUS
 ```r
 # Bar chart of marital
 df %>%
@@ -379,7 +383,7 @@ df %>%
 ```
 > <img src="https://user-images.githubusercontent.com/19381768/230249891-6e886fb6-4a36-4470-88fe-22affa53772e.png" width=50%/>
 
-#### HAPPINESS AND LEVEL OF EDUCATION
+#### :bread: 1.2.3.4 HAPPINESS AND LEVEL OF EDUCATION
 ```r
 # Bar chart of degree
 df %>%
@@ -461,6 +465,7 @@ df %<>%
 df %>% count(college)
 ```
 <blockquote>
+  
 ```
 # A tibble: 2 × 2
   college     n
@@ -478,7 +483,7 @@ df %>%
 ```
 > <img src="https://user-images.githubusercontent.com/19381768/230250993-cf913934-f2f5-41f8-bd22-2ae1d6bf9bf4.png" width=50%/>
 
-#### HAPPINESS AND FINANCIAL STATUS
+#### :bread: 1.2.3.5 HAPPINESS AND FINANCIAL STATUS
 ```r
 # Bar chart of finrela
 df %>%
@@ -584,7 +589,7 @@ df %>%
 ```
 > <img src="https://user-images.githubusercontent.com/19381768/230255817-1b160fba-35a1-43ea-a2a5-24e9ec82c822.png" width=50%/>
 
-#### HAPPINESS AND HEALTH
+#### :bread: 1.2.3.6 HAPPINESS AND HEALTH
 ```r
 # Bar chart of health
 df %>%
@@ -625,7 +630,7 @@ df %>%
 ```
 > <img src="https://user-images.githubusercontent.com/19381768/230258022-558bc594-1695-4907-9e0f-4e53e72e4c16.png" width=50%/>
 
-#### HAPPINESS AND YEAR OF SURVEY
+#### :bread: 1.2.3.7 HAPPINESS AND YEAR OF SURVEY
 ```r
 # Histogram of year
 df %>% qplot(year, binwidth = 5, data = .)
@@ -676,7 +681,7 @@ df %>%
 ```
 > <img src="https://user-images.githubusercontent.com/19381768/230259973-6be487bc-b247-47d3-8523-858213f9d758.png" width=50%/>
 
-#### HAPPINESS AND AGE
+#### :bread: 1.2.3.8 HAPPINESS AND AGE
 ```r
 # Histogram of age
 df %>% qplot(age, binwidth = 5, data = .)
@@ -728,7 +733,7 @@ df %>%
 ```
 > <img src="https://user-images.githubusercontent.com/19381768/230260753-9fc9ac51-da7c-4671-8e15-2e93a19499ed.png" width=50%/>
 
-#### HAPPINESS AND YEAR BORN
+#### :bread: 1.2.3.9 HAPPINESS AND YEAR BORN
 ```r
 # Calculate year of birth
 df %<>%
@@ -781,9 +786,9 @@ df %>%
 # No obvious differences
 ```
 > <img src="https://user-images.githubusercontent.com/19381768/230261339-899a3c12-ba15-46f1-a7de-ef88200178fa.png" width=50%/>
-```r
-# CLEAN UP #################################################
 
+#### :bread: 1.2.3.10 CLEAN UP
+```r
 # Clear data
 rm(list = ls())  # Removes all objects from environment
 
@@ -800,6 +805,6 @@ cat("\014")  # Mimics ctrl+L
 # Clear mind :)
 ```
 
-### 1.2.4 Summary
+### :apple: 1.2.4 Summary
 - The point of visualization and wrangling the data is not to reach final conclusions, but to raise questions and guide further investigation.
 - Visualization and wrangling the data can help to organize the data into a form that's best suited for answering questions and getting the visualizations that give insight and ideas for analysis.
