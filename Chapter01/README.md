@@ -1,7 +1,5 @@
 # 1 WHAT IS R?
 
-[TOC]
-
 ## 1.1 R in Context
 
 In this section, we will discuss where R fits in the data science toolbox and its popularity among professionals.
