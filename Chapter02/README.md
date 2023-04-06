@@ -405,3 +405,21 @@ cat("\014")  # ctrl+L
 Packages can be found for free and downloaded from [the Comprehensive R Archive Network (CRAN) website](https://cran.r-project.org/index.html).
 - CRAN has over 15,000 packages available for R, and packages can be searched by topic using CRAN task views
 - Each package has a reference manual that provides instructions for using the package
+
+## :herb: 2.9 The Tidyverse
+
+- R packages can contain other packages, creating a self-referential, self-inclusive system.
+- The Tidyverse is one of the most important packages to install in R, which dramatically improves the functionality and changes the way of working with data.
+- The Tidyverse is an umbrella term that includes packages for data science to make work easier, cleaner, more efficient, and more reliable.
+- The Tidyverse package brings in a whole bunch of other packages with it.
+- Tidyverse includes the following packages:
+  - ggplot2 for graphics
+  - dplyr for manipulating data
+  - tidyr for cleaning up data
+  - readr for bringing in various data sets
+  - purrr for functional programming
+  - tibble for a variation on data frames and makes things easier to work with
+  - stringr for strings
+  - forcats for working with categorical data
+- The Tidyverse makes R a specific dialect.
+- The Tidyverse is used throughout this course because it provides clarity in work and includes important functionalities such as pipes and ggplot2.
