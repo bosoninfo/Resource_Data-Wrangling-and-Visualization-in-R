@@ -413,14 +413,14 @@ Packages can be found for free and downloaded from [the Comprehensive R Archive 
 - The Tidyverse is an umbrella term that includes packages for data science to make work easier, cleaner, more efficient, and more reliable.
 - The Tidyverse package brings in a whole bunch of other packages with it.
 - Tidyverse includes the following packages:
-  - ggplot2 for graphics
-  - dplyr for manipulating data
-  - tidyr for cleaning up data
-  - readr for bringing in various data sets
-  - purrr for functional programming
-  - tibble for a variation on data frames and makes things easier to work with
-  - stringr for strings
-  - forcats for working with categorical data
+  - `ggplot2` for graphics
+  - `dplyr` for manipulating data
+  - `tidyr` for cleaning up data
+  - `readr` for bringing in various data sets
+  - `purrr` for functional programming
+  - `tibble` for a variation on data frames and makes things easier to work with
+  - `stringr` for strings
+  - `forcats` for working with categorical data
 - The Tidyverse makes R a specific dialect.
 - The Tidyverse is used throughout this course because it provides clarity in work and includes important functionalities such as pipes and ggplot2.
 
